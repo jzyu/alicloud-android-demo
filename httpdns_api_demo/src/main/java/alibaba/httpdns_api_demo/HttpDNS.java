@@ -19,8 +19,8 @@ import java.util.concurrent.Future;
 
 public class HttpDNS {
 
-    private static final String SERVER_IP = "203.107.1.1";
-    private static final String ACCOUNT_ID = "139450";
+    private static final String SERVER_IP = "114.116.17.227";
+    private static final String ACCOUNT_ID = "123";
     private static final int MAX_THREAD_NUM = 5;
     private static final int RESOLVE_TIMEOUT_IN_SEC = 10;
     private static final int MAX_HOLD_HOST_NUM = 100;
@@ -162,7 +162,7 @@ public class HttpDNS {
 
         @Override
         public String call() {
-            String resolveUrl = "http://" + SERVER_IP + "/" + ACCOUNT_ID + "/d?host=" + hostName;
+            String resolveUrl = "http://" + SERVER_IP + "/" + ACCOUNT_ID + "/d?dn=" + hostName;
             HttpDNSLog.logD("[QueryHostTask.call] - buildUrl: " + resolveUrl);
             try {
                 HttpURLConnection conn = (HttpURLConnection) new URL(resolveUrl).openConnection();
